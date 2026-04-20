@@ -74,21 +74,28 @@
         body[dir="rtl"] .floating-wa { left: 30px; right: auto; }
         body[dir="ltr"] .floating-wa { right: 30px; left: auto; }
 
-        /* --- Animated Icons Section --- */
-        .anim-icon { display: inline-block; font-size: 38px; filter: drop-shadow(0 0 15px var(--accent-gold)); }
+        /* --- SVG Doodle Animations Section --- */
+        .anim-icon { display: inline-flex; justify-content: center; align-items: center; filter: drop-shadow(0 0 10px var(--accent-gold)); color: var(--accent-gold); }
+        .anim-icon svg { width: 38px; height: 38px; }
+        
         .fly { animation: flyAnim 4s ease-in-out infinite; }
-        @keyframes flyAnim { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-10px, -15px) rotate(-5deg); } }
+        @keyframes flyAnim { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-8px, -8px) rotate(-5deg); } }
+        
         .float { animation: floatAnim 3s ease-in-out infinite; }
-        @keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        
         .pulse { animation: pulseAnim 3s ease-in-out infinite; }
-        @keyframes pulseAnim { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px var(--accent-gold)); } 50% { transform: scale(1.15); filter: drop-shadow(0 0 25px #FFF); } }
+        @keyframes pulseAnim { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px var(--accent-gold)); } 50% { transform: scale(1.1); filter: drop-shadow(0 0 20px var(--accent-gold)); } }
+        
         .rock { animation: rockAnim 3s ease-in-out infinite; }
         @keyframes rockAnim { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
 
         @media (max-width: 768px) { .hero h1 { font-size: 36px; } header { flex-direction: column; gap: 15px; } nav ul { gap: 10px; flex-wrap: wrap; justify-content: center; } .social-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
-<body id="main-body" dir="rtl"> <div class="ambient-light light-1"></div>
+<body id="main-body" dir="rtl">
+
+    <div class="ambient-light light-1"></div>
     <div class="ambient-light light-2"></div>
 
     <header>
@@ -105,7 +112,8 @@
                 <li><a href="#life" data-key="nav_life">اسپانیا</a></li>
                 <li>
                     <select class="language-select" id="lang-selector" onchange="changeLanguage()">
-                        <option value="fa" selected>FA</option> <option value="en">EN</option>
+                        <option value="fa" selected>FA</option>
+                        <option value="en">EN</option>
                     </select>
                 </li>
             </ul>
@@ -120,7 +128,15 @@
     <section id="services" class="page-section">
         <div class="section-title fade-in">
             <p>Services</p>
-            <h2><span class="anim-icon fly">✈️</span> <span data-key="services_title">راه‌کارهای مهاجرتی</span></h2>
+            <h2>
+                <span class="anim-icon fly">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </span>
+                <span data-key="services_title">راه‌کارهای مهاجرتی</span>
+            </h2>
         </div>
         <div class="grid">
             <div class="aura-card fade-in" onclick="openModal('student')" style="cursor:pointer">
@@ -141,7 +157,15 @@
     <section id="edu" class="page-section">
         <div class="section-title fade-in">
             <p data-key="edu_sub">Academic Excellence</p>
-            <h2><span class="anim-icon float">🎓</span> <span data-key="edu_title">Study in Spain</span></h2>
+            <h2>
+                <span class="anim-icon float">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                </span>
+                <span data-key="edu_title">Study in Spain</span>
+            </h2>
         </div>
         <div class="grid">
             <div class="aura-card fade-in">
@@ -169,7 +193,22 @@
     <section id="climate" class="page-section">
         <div class="section-title fade-in">
             <p data-key="climate_sub">Environment</p>
-            <h2><span class="anim-icon pulse">☀️</span> <span data-key="climate_title">Spain's Climate</span></h2>
+            <h2>
+                <span class="anim-icon pulse">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+                <span data-key="climate_title">Spain's Climate</span>
+            </h2>
         </div>
         <div class="grid">
             <div class="aura-card fade-in">
@@ -198,7 +237,15 @@
     <section id="life" class="page-section">
         <div class="section-title fade-in">
             <p data-key="life_sub">Discovery</p>
-            <h2><span class="anim-icon rock">🧳</span> <span data-key="life_title">Life in Spain</span></h2>
+            <h2>
+                <span class="anim-icon rock">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                </span>
+                <span data-key="life_title">Life in Spain</span>
+            </h2>
         </div>
         <div class="grid">
             <div class="aura-card fade-in">
