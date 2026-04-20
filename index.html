@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buendia Groupe | Premium Spain Residency</title>
+    <title>Buendia Group | Premium Spain Residency</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,6 +76,9 @@
         .consult-box input, .consult-box textarea, .consult-box select { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); padding: 15px 20px; border-radius: 15px; color: white; font-family: inherit; font-size: 15px; box-sizing: border-box; transition: 0.3s; }
         .consult-box input:focus, .consult-box textarea:focus { outline: none; border-color: var(--accent-gold); background: rgba(255,255,255,0.08); }
 
+        /* Fix for Dropdown Options (White background, black text) */
+        select option { background-color: #FFFFFF; color: #000000; }
+
         .fade-in { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
         .fade-in.appear { opacity: 1; transform: translateY(0); }
 
@@ -110,14 +113,13 @@
     <header>
         <div class="brand-container">
             <img src="https://i.postimg.cc/Js6V2vvW/logo.png" alt="Logo" class="logo-img">
-            <div class="agency-name" data-key="agency_name">گروه بوئندیا</div>
+            <div class="agency-name" data-key="agency_name">گروه بوندیا</div>
         </div>
         <nav>
             <ul>
                 <li><a href="#" data-key="nav_home">خانه</a></li>
                 <li><a href="#services" data-key="nav_services">خدمات</a></li>
                 <li><a href="#details" data-key="nav_visas">مهاجرت</a></li>
-                <li><a href="#edu" data-key="nav_edu">تحصیل</a></li>
                 <li><a href="#life" data-key="nav_life">اسپانیا</a></li>
                 <li><a href="#consult" data-key="nav_consult" style="color:var(--accent-gold); font-weight:700;">مشاوره</a></li>
                 <li>
@@ -131,8 +133,8 @@
     </header>
 
     <section class="hero fade-in">
-        <h1 data-key="hero_title">اقامت اسپانیا با اطمینان و سرعت</h1>
-        <p data-key="hero_desc">از اخذ اقامت و گلدن ویزا تا ثبت شرکت و خرید ملک. با همراهی شبکه حقوقی و مالیاتی محلی در اسپانیا، مسیر زندگی اروپایی خود را امن و حرفه‌ای آغاز کنید.</p>
+        <h1 data-key="hero_title">آینده شما در اسپانیا از اینجا شروع می شود</h1>
+        <p data-key="hero_desc">مشاوره تخصصی اقامت، مهاجرت و شغلی برای حرفه‌ای‌های جهانی.</p>
         <div class="hero-buttons">
             <a href="#consult" class="btn-primary" data-key="btn_consult">مشاوره رایگان</a>
             <a href="#details" class="btn-secondary" data-key="btn_learn">اطلاعات بیشتر</a>
@@ -147,7 +149,7 @@
         <div class="grid">
             <div class="aura-card fade-in">
                 <h3 data-key="cat_1_title">اقامت و ویزا</h3>
-                <p data-key="cat_1_desc">تحلیل و طراحی مسیر اقامت (تمکن مالی، گلدن ویزا، دیجیتال نومد) بر اساس پروفایل واقعی شما.</p>
+                <p data-key="cat_1_desc">تحلیل و طراحی مسیر اقامت (دیجیتال نومد، تمکن مالی، گلدن ویزا) بر اساس پروفایل واقعی شما.</p>
             </div>
             <div class="aura-card fade-in">
                 <h3 data-key="cat_2_title">سرمایه‌گذاری ملک</h3>
@@ -176,6 +178,16 @@
         <div class="section-title fade-in">
             <p data-key="det_sub">Pathways & Explanations</p>
             <h2><span class="anim-icon fly"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></span> <span data-key="det_title">مسیرهای اصلی مهاجرت</span></h2>
+        </div>
+
+        <div class="detail-card fade-in">
+            <h3 data-key="det_nomad_title">💻 ویزای دیجیتال نومد (Digital Nomad)</h3>
+            <p data-key="det_nomad_desc">این ویزا جذاب‌ترین و پرمخاطب‌ترین مسیر مهاجرتی فعلی اسپانیاست. مخصوص افرادی است که به صورت ریموت (دورکاری) برای شرکت‌های خارج از اسپانیا کار می‌کنند یا فریلنسرهای بین‌المللی هستند که می‌خواهند از کیفیت زندگی اسپانیا لذت ببرند.</p>
+            <ul>
+                <li data-key="det_nomad_1">دریافت اقامت ۳ ساله از همان ابتدا (قابل تمدید تا ۵ سال و دریافت اقامت دائم).</li>
+                <li data-key="det_nomad_2">بهره‌مندی از مزایای فوق‌العاده مالیاتی در صورت واجد شرایط بودن (Beckham Law).</li>
+                <li data-key="det_nomad_3">امکان همراهی همزمان همسر و فرزندان، با اجازه کار کامل و بدون محدودیت برای همسر.</li>
+            </ul>
         </div>
 
         <div class="detail-card fade-in">
@@ -220,7 +232,7 @@
             </div>
             <div class="aura-card fade-in">
                 <h3 data-key="life_cli_title">تنوع آب‌وهوایی بی‌نظیر</h3>
-                <p data-key="life_cli_desc">از سواحل مدیترانه‌ای گرم و آفتابی (بارسلونا، والنسیا، مالاگا) تا مناطق سرسبز و بارانی شمال، و آب‌وهوای خشک مرکز (مادرید). اسپانیا برای هر سلیقه‌ای، شهری بی‌نقص دارد.</p>
+                <p data-key="life_cli_desc">از سواحل مدیترانه‌ای گرم و آفتابی تا مناطق سرسبز و بارانی شمال، و آب‌وهوای خشک مرکز. اسپانیا برای هر سلیقه‌ای، شهری بی‌نقص دارد.</p>
             </div>
         </div>
     </section>
@@ -235,12 +247,13 @@
                 <input type="tel" name="Phone" required placeholder="شماره تماس / واتساپ (Phone/WhatsApp)" dir="ltr">
                 <select name="Service_Interest" required>
                     <option value="" disabled selected data-key="form_opt_def">موضوع مشاوره را انتخاب کنید</option>
-                    <option value="Golden Visa">گلدن ویزا و خرید ملک</option>
-                    <option value="Non-Lucrative">اقامت تمکن مالی</option>
-                    <option value="Company/Startup">ثبت شرکت و راه‌اندازی بیزنس</option>
-                    <option value="Student Visa">ویزای تحصیلی / دوره‌های زبان</option>
+                    <option value="Digital Nomad" data-key="form_opt_1">ویزای دیجیتال نومد</option>
+                    <option value="Golden Visa" data-key="form_opt_2">گلدن ویزا و خرید ملک</option>
+                    <option value="Non-Lucrative" data-key="form_opt_3">اقامت تمکن مالی</option>
+                    <option value="Company/Startup" data-key="form_opt_4">ثبت شرکت و راه‌اندازی بیزنس</option>
+                    <option value="Student Visa" data-key="form_opt_5">ویزای تحصیلی / دوره‌های زبان</option>
                 </select>
-                <textarea name="Details" rows="3" placeholder="توضیحات کوتاه در مورد شرایط شما (سن، سرمایه تقریبی، هدف)..." data-key="form_msg"></textarea>
+                <textarea name="Details" rows="3" placeholder="توضیحات کوتاه در مورد شرایط شما (سن، شغل، هدف)..." data-key="form_msg"></textarea>
                 <button type="submit" class="btn-primary" id="submitBtn" style="width:100%; margin-top:10px;" data-key="form_btn">ثبت درخواست مشاوره</button>
             </form>
             
@@ -251,8 +264,8 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Buendia Groupe | Premium Residency Experts. All rights reserved.</p>
+    <footer dir="ltr">
+        <p>&copy; 2026 Buendia Group | Premium Residency Experts. All rights reserved</p>
     </footer>
 
     <a href="https://wa.me/34614066200" target="_blank" class="floating-wa">
@@ -262,17 +275,21 @@
     <script>
         const translations = {
             en: {
-                agency_name: "Buendia Groupe", nav_home: "Home", nav_services: "Services", nav_visas: "Visas", nav_edu: "Education", nav_life: "Spain", nav_consult: "Consult",
-                hero_title: "Secure Your Residency in Spain.", hero_desc: "From Golden Visas to Corporate Setup and Real Estate. Start your secure, professional European journey with our local legal and tax network.",
+                agency_name: "Buendia Group", nav_home: "Home", nav_services: "Services", nav_visas: "Visas", nav_life: "Spain", nav_consult: "Consult",
+                hero_title: "Your Future in Spain Starts Here.", hero_desc: "Bespoke residency, immigration, and career consulting for the global professional.",
                 btn_consult: "Free Consultation", btn_learn: "Learn More",
                 srv_sub: "Premium Categories", srv_title: "Core Services",
-                cat_1_title: "Residency & Visas", cat_1_desc: "Custom pathway design (Non-Lucrative, Golden Visa, Digital Nomad) based on your real profile.",
+                cat_1_title: "Residency & Visas", cat_1_desc: "Custom pathway design (Digital Nomad, Non-Lucrative, Golden Visa) based on your real profile.",
                 cat_2_title: "Real Estate Investment", cat_2_desc: "Selecting cities and properties combining high quality of life with strong ROI.",
                 cat_3_title: "Corporate Setup", cat_3_desc: "Company structure, banking, and tax planning for international entrepreneurs.",
                 cat_4_title: "Academic Future", cat_4_desc: "University admissions and language courses creating a long-term pathway to the labor market.",
                 cat_5_title: "Finance & Banking", cat_5_desc: "International bank account opening, precise tax understanding, and capital flow planning.",
                 cat_6_title: "Relocation Services", cat_6_desc: "From neighborhood selection and schools to insurance and housing after arrival.",
                 det_sub: "Pathways & Explanations", det_title: "Main Immigration Pathways",
+                det_nomad_title: "💻 Digital Nomad Visa", det_nomad_desc: "The most sought-after residency right now. Designed for international freelancers and remote workers employed by companies outside of Spain.",
+                det_nomad_1: "Grants up to a 3-year residency permit, renewable towards permanent residency.",
+                det_nomad_2: "Incredible tax advantages (Beckham Law) for eligible remote workers.",
+                det_nomad_3: "Immediate inclusion of spouse and children, with full working rights for the spouse.",
                 det_golden_title: "🇪🇸 Golden Visa", det_golden_desc: "The Golden Visa is your fast track to Europe. Non-EU citizens investing at least €500,000 in Spanish real estate secure permanent residency for their entire family.",
                 det_golden_1: "No physical residency requirement (maintain your business in your home country).",
                 det_golden_2: "Full working rights in Spain for all family members.",
@@ -286,22 +303,24 @@
                 det_student_2: "Public university fees are incredibly affordable (€700 - €3500 per year).",
                 life_sub: "Discover the Country", life_title: "Why Choose Spain?",
                 life_med_title: "Quality & Cost of Living", life_med_desc: "Living costs are significantly lower than Northern Europe, paired with a world-class healthcare system and extremely high urban security.",
-                life_cli_title: "Unmatched Climate", life_cli_desc: "From the sunny Mediterranean coast to the lush green north and the dry center of Madrid, Spain has the perfect climate for everyone.",
+                life_cli_title: "Unmatched Climate", life_cli_desc: "From the sunny Mediterranean coast to the lush green north and the dry center. Spain has the perfect climate for everyone.",
                 form_title: "Free Consultation Request", form_desc: "Fill out the form below in under a minute. Our experts will analyze your profile and suggest the best pathway.",
-                form_name: "Full Name", form_opt_def: "Select your primary interest", form_msg: "Briefly describe your situation (age, capital, goals)...", form_btn: "Submit Request", form_success: "Request submitted successfully. We will contact you soon."
+                form_name: "Full Name", form_opt_def: "Select your primary interest", form_opt_1: "Digital Nomad Visa", form_opt_2: "Golden Visa & Real Estate", form_opt_3: "Non-Lucrative Visa", form_opt_4: "Corporate Setup & Startup", form_opt_5: "Student Visa & Language Courses", form_msg: "Briefly describe your situation (age, profession, goals)...", form_btn: "Submit Request", form_success: "Request submitted successfully. We will contact you soon."
             },
             fa: {
-                agency_name: "گروه بوئندیا", nav_home: "خانه", nav_services: "خدمات", nav_visas: "مهاجرت", nav_edu: "تحصیل", nav_life: "اسپانیا", nav_consult: "مشاوره",
-                hero_title: "اقامت اسپانیا با اطمینان و سرعت", hero_desc: "از اخذ اقامت و گلدن ویزا تا ثبت شرکت و خرید ملک. با همراهی شبکه حقوقی و مالیاتی محلی، مسیر زندگی اروپایی خود را امن آغاز کنید.",
+                agency_name: "گروه بوندیا", nav_home: "خانه", nav_services: "خدمات", nav_visas: "مهاجرت", nav_life: "اسپانیا", nav_consult: "مشاوره",
+                hero_title: "آینده شما در اسپانیا از اینجا شروع می شود", hero_desc: "مشاوره تخصصی اقامت، مهاجرت و شغلی برای حرفه‌ای‌های جهانی.",
                 btn_consult: "مشاوره رایگان", btn_learn: "اطلاعات بیشتر",
                 srv_sub: "Premium Categories", srv_title: "خدمات اصلی",
-                cat_1_title: "اقامت و ویزا", cat_1_desc: "تحلیل و طراحی مسیر اقامت (تمکن مالی، گلدن ویزا، نومد) بر اساس پروفایل واقعی شما.",
+                cat_1_title: "اقامت و ویزا", cat_1_desc: "تحلیل و طراحی مسیر اقامت (دیجیتال نومد، تمکن مالی، گلدن ویزا) بر اساس پروفایل واقعی شما.",
                 cat_2_title: "سرمایه‌گذاری ملک", cat_2_desc: "انتخاب ملک با نگاه ترکیبیِ «زندگی مرفه + بازده سرمایه بالا».",
                 cat_3_title: "ثبت شرکت", cat_3_desc: "طراحی ساختار شرکت، حساب بانکی و مالیات برای کارآفرینان.",
                 cat_4_title: "تحصیل و آینده", cat_4_desc: "انتخاب دانشگاه و ساختن مسیر بلندمدت ورود هوشمندانه به بازار کار.",
                 cat_5_title: "امور مالی و بانکی", cat_5_desc: "افتتاح حساب، فهم مالیات و برنامه‌ریزی انتقال سرمایه بین ایران و اسپانیا.",
                 cat_6_title: "اسکان (Relocation)", cat_6_desc: "از پیدا کردن محله و مدرسه فرزندان تا بیمه و اجاره خانه.",
                 det_sub: "Pathways & Explanations", det_title: "مسیرهای اصلی مهاجرت",
+                det_nomad_title: "💻 ویزای دیجیتال نومد (Digital Nomad)", det_nomad_desc: "این ویزا جذاب‌ترین و پرمخاطب‌ترین مسیر مهاجرتی فعلی اسپانیاست. مخصوص افرادی است که به صورت ریموت (دورکاری) برای شرکت‌های خارج از اسپانیا کار می‌کنند یا فریلنسرهای بین‌المللی هستند که می‌خواهند از کیفیت زندگی اسپانیا لذت ببرند.",
+                det_nomad_1: "دریافت اقامت ۳ ساله از همان ابتدا (قابل تمدید تا ۵ سال و دریافت اقامت دائم).", det_nomad_2: "بهره‌مندی از مزایای فوق‌العاده مالیاتی در صورت واجد شرایط بودن (Beckham Law).", det_nomad_3: "امکان همراهی همزمان همسر و فرزندان، با اجازه کار کامل و بدون محدودیت برای همسر.",
                 det_golden_title: "🇪🇸 گلدن ویزا (ویزای طلایی)", det_golden_desc: "ویزای طلایی اسپانیا دریچه ورود سریع شما به اروپا است. شهروندان خارج از اتحادیه اروپا می‌توانند با سرمایه‌گذاری حداقل ۵۰۰ هزار یورو در بخش املاک، اقامت دائم دریافت کنند.",
                 det_golden_1: "عدم نیاز به حضور فیزیکی دائم در اسپانیا (حفظ تجارت در ایران).", det_golden_2: "اجازه کار کامل در اسپانیا برای تمام اعضای خانواده.", det_golden_3: "سرمایه‌گذاری در چندین ملک تجاری یا مسکونی مجاز است.",
                 det_nonluc_title: "💶 اقامت تمکن مالی", det_nonluc_desc: "مخصوص متقاضیانی که درآمد ثابت و غیرفعال (سود سپرده، اجاره، حقوق بازنشستگی) در ایران دارند و نیازی به کار کردن در اسپانیا ندارند.",
@@ -310,9 +329,9 @@
                 det_student_1: "اجازه کار پاره‌وقت (تا ۳۰ ساعت در هفته) برای پوشش هزینه‌ها.", det_student_2: "هزینه تحصیل بسیار مقرون‌به‌صرفه (۷۰۰ تا ۳۵۰۰ یورو در سال).",
                 life_sub: "Discover the Country", life_title: "چرا زندگی در اسپانیا؟",
                 life_med_title: "کیفیت و هزینه زندگی", life_med_desc: "هزینه زندگی بسیار ارزان‌تر از شمال اروپا به همراه سیستم درمانی قدرتمند و امنیت شهری بسیار بالا.",
-                life_cli_title: "تنوع آب‌وهوایی", life_cli_desc: "از سواحل مدیترانه‌ای گرم تا مناطق سرسبز و بارانی شمال و آب‌وهوای خشک مادرید.",
+                life_cli_title: "تنوع آب‌وهوایی", life_cli_desc: "از سواحل مدیترانه‌ای گرم تا مناطق سرسبز و بارانی شمال و آب‌وهوای خشک. اسپانیا برای هر سلیقه‌ای، شهری بی‌نقص دارد.",
                 form_title: "فرم ارزیابی و مشاوره رایگان", form_desc: "در کمتر از یک دقیقه، فرم زیر را پر کنید تا بهترین مسیر مهاجرتی را پیشنهاد دهیم.",
-                form_name: "نام و نام خانوادگی", form_opt_def: "موضوع مشاوره را انتخاب کنید", form_msg: "توضیحات کوتاه در مورد شرایط شما (سن، سرمایه تقریبی، هدف)...", form_btn: "ثبت درخواست مشاوره", form_success: "درخواست شما با موفقیت ثبت شد. به زودی با شما تماس می‌گیریم."
+                form_name: "نام و نام خانوادگی", form_opt_def: "موضوع مشاوره را انتخاب کنید", form_opt_1: "ویزای دیجیتال نومد", form_opt_2: "گلدن ویزا و خرید ملک", form_opt_3: "اقامت تمکن مالی", form_opt_4: "ثبت شرکت و راه‌اندازی بیزنس", form_opt_5: "ویزای تحصیلی / دوره‌های زبان", form_msg: "توضیحات کوتاه در مورد شرایط شما (سن، شغل، هدف)...", form_btn: "ثبت درخواست مشاوره", form_success: "درخواست شما با موفقیت ثبت شد. به زودی با شما تماس می‌گیریم."
             }
         };
 
@@ -333,7 +352,6 @@
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             btn.innerText = "...";
-            // Replace with your Formspree link:
             await fetch("https://formspree.io/f/xyklpkba", { method: "POST", body: new FormData(e.target), headers: { 'Accept': 'application/json' } });
             document.getElementById('freeConsultForm').style.display = 'none';
             document.getElementById('successSection').style.display = 'block';
