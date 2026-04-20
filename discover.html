@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Spain | Buendia Group</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-obsidian: #030b14; 
+            --accent-gold: #C5A059; 
+            --accent-glow: rgba(197, 160, 89, 0.4);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --font-en: 'Inter', sans-serif;
+            --font-fa: 'Vazirmatn', sans-serif;
+        }
+
+        body { font-family: var(--font-en); margin: 0; padding: 0; background-color: var(--bg-obsidian); color: white; overflow-x: hidden; }
+        body[dir="rtl"] { font-family: var(--font-fa); }
+
+        /* Header (Same as index.html) */
+        header { background: rgba(3, 11, 20, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-glass); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 90%; top: 0; z-index: 100; }
+        .brand-container { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 45px; width: 45px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 15px var(--accent-glow); }
+        .agency-name { font-size: 20px; font-weight: 700; background: linear-gradient(to right, #FFF, var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; align-items: center; padding: 0;}
+        nav ul li a { font-size: 14px; font-weight: 500; color: #A0AEC0; transition: 0.3s; text-decoration: none; }
+        nav ul li a:hover { color: white; text-shadow: 0 0 8px var(--accent-glow); }
+
+        /* The Floating Gallery Full Screen */
+        .hero { 
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .floating-gallery { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.7; }
+        .float-card { position: absolute; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.5); border: 1px solid rgba(197, 160, 89, 0.3); transform-style: preserve-3d; animation: floatAnim 8s ease-in-out infinite alternate; }
+        .float-card img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+        
+        /* Card Placements around the center */
+        .card-1 { width: 150px; height: 200px; top: 15%; left: 10%; animation-delay: 0s; transform: rotate(-10deg); }
+        .card-2 { width: 200px; height: 130px; top: 20%; right: 12%; animation-delay: -2s; transform: rotate(15deg); }
+        .card-3 { width: 170px; height: 240px; bottom: 15%; left: 15%; animation-delay: -4s; transform: rotate(5deg); }
+        .card-4 { width: 140px; height: 140px; bottom: 20%; right: 15%; animation-delay: -6s; transform: rotate(-15deg); }
+        .card-5 { width: 130px; height: 180px; top: 10%; left: 50%; transform: translateX(-50%) rotate(5deg); animation-delay: -3s; opacity: 0.4; }
+
+        @keyframes floatAnim {
+            0% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+            100% { transform: translateY(-30px) rotate(calc(var(--rot, 0deg) + 5deg)); }
+        }
+
+        /* Central Text */
+        .hero-content { position: relative; z-index: 10; text-align: center; background: rgba(3, 11, 20, 0.7); padding: 50px; border-radius: 30px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.05); max-width: 600px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #FFF 0%, var(--accent-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.3; }
+        .hero p { font-size: 16px; color: #A0AEC0; font-weight: 300; margin-bottom: 30px;}
+
+        .btn-primary { background: var(--accent-gold); color: black; padding: 15px 35px; border-radius: 30px; font-weight: 700; text-decoration: none; transition: 0.3s; box-shadow: 0 0 20px var(--accent-glow); border: none; font-family: inherit; font-size: 16px; display: inline-block;}
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 30px var(--accent-gold); }
+
+        select option { background-color: #FFFFFF; color: #000000; }
+
+        @media (max-width: 768px) { 
+            header { flex-direction: column; gap: 15px; position: static; width: 100%;} 
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; } 
+            .hero-content { background: transparent; border: none; box-shadow: none; padding: 20px; margin-top: 30px;}
+            /* Adjust cards for mobile so they don't cover text */
+            .card-1 { width: 100px; height: 130px; top: 5%; left: -5%; }
+            .card-2 { width: 120px; height: 90px; top: 10%; right: -5%; }
+            .card-3 { width: 110px; height: 150px; bottom: 5%; left: 0%; }
+            .card-4 { width: 90px; height: 90px; bottom: 10%; right: 5%; }
+        }
+    </style>
+</head>
+<body id="main-body" dir="rtl">
+
+    <header>
+        <div class="brand-container">
+            <img src="https://i.postimg.cc/Js6V2vvW/logo.png" alt="Logo" class="logo-img">
+            <div class="agency-name" data-key="agency_name">گروه بوندیا</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-key="nav_home">خانه</a></li>
+                <li><a href="index.html#services" data-key="nav_services">خدمات</a></li>
+                <li><a href="index.html#consult" data-key="nav_consult">مشاوره</a></li>
+                <li>
+                    <select id="lang-selector" onchange="changeLanguage()" style="background:transparent; color:white; border:1px solid var(--border-glass); border-radius:5px; padding:3px;">
+                        <option value="fa" selected>FA</option>
+                        <option value="en">EN</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="floating-gallery" id="parallax-gallery">
+            <div class="float-card card-1" style="--rot: -10deg;"><img src="https://images.unsplash.com/photo-1539037116277-4db2020280eb?w=400&q=80" alt="Spain"></div>
+            <div class="float-card card-2" style="--rot: 15deg;"><img src="https://images.unsplash.com/photo-1543783203-d02ce4c653b6?w=400&q=80" alt="Madrid"></div>
+            <div class="float-card card-3" style="--rot: 5deg;"><img src="https://images.unsplash.com/photo-1558642084-fd283eb08cc2?w=400&q=80" alt="Seville"></div>
+            <div class="float-card card-4" style="--rot: -15deg;"><img src="https://images.unsplash.com/photo-1541343672885-afbe85afaf52?w=400&q=80" alt="Valencia"></div>
+            <div class="float-card card-5" style="--rot: 5deg;"><img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&q=80" alt="Coast"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1 data-key="hero_title">آماده تغییر زندگی خود هستید؟</h1>
+            <p data-key="hero_desc">اسپانیا فراتر از یک مقصد است؛ یک سبک زندگی امن، آرام و پر از فرصت‌های جدید است. با تیم ما، این مسیر را مطمئن طی کنید.</p>
+            <a href="index.html#consult" class="btn-primary" data-key="btn_consult">شروع مسیر شما</a>
+        </div>
+    </section>
+
+    <script>
+        const translations = {
+            en: {
+                agency_name: "Buendia Group", nav_home: "Home", nav_services: "Services", nav_consult: "Consult",
+                hero_title: "Are you ready to change your life?", 
+                hero_desc: "Spain is more than a destination; it's a secure, peaceful lifestyle full of new opportunities. Walk this path with confidence alongside our team.",
+                btn_consult: "Start Your Journey"
+            },
+            fa: {
+                agency_name: "گروه بوندیا", nav_home: "خانه", nav_services: "خدمات", nav_consult: "مشاوره",
+                hero_title: "آماده تغییر زندگی خود هستید؟", 
+                hero_desc: "اسپانیا فراتر از یک مقصد است؛ یک سبک زندگی امن، آرام و پر از فرصت‌های جدید است. با تیم ما، این مسیر را مطمئن طی کنید.",
+                btn_consult: "شروع مسیر شما"
+            }
+        };
+
+        function changeLanguage() {
+            const lang = document.getElementById('lang-selector').value;
+            document.body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+        }
+
+        // Parallax effect for the floating gallery
+        document.addEventListener("mousemove", e => {
+            const x = (window.innerWidth - e.pageX) / 90;
+            const y = (window.innerHeight - e.pageY) / 90;
+            document.querySelectorAll(".float-card").forEach(card => {
+                card.style.transform = `translate(${x}px, ${y}px) rotate(var(--rot))`;
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", changeLanguage);
+    </script>
+</body>
+</html>
