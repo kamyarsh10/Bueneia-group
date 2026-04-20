@@ -46,7 +46,7 @@
 
         .page-section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 32px; color: white; margin-bottom: 10px; }
+        .section-title h2 { font-size: 32px; color: white; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; gap: 15px; }
         .section-title p { color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
@@ -55,15 +55,6 @@
         .aura-card h3 { font-size: 18px; color: white; margin-top: 0; display: flex; align-items: center; gap: 10px; }
         .aura-card p { font-size: 14px; color: var(--text-muted); white-space: pre-line; }
 
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
-        .data-table tr { border-bottom: 1px solid var(--border-glass); }
-        .data-table td { padding: 12px 5px; color: var(--text-muted); }
-        .data-table td:last-child { text-align: right; color: var(--accent-gold); font-weight: 600; }
-        body[dir="rtl"] .data-table td:last-child { text-align: left; }
-
-        .highlight-box { background: linear-gradient(145deg, rgba(197,160,89,0.1), transparent); border: 1px solid var(--accent-gold); border-radius: 20px; padding: 40px; margin-top: 40px; text-align: center; }
-        .pill { background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 20px; font-size: 12px; border: 1px solid var(--border-glass); margin: 5px; display: inline-block; color: white; }
-
         .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
         .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px; border-radius: 15px; border: 1px solid var(--border-glass); background: rgba(255,255,255,0.02); transition: var(--transition); font-weight: 600; color: white; }
         .social-btn:hover { background: rgba(197, 160, 89, 0.1); border-color: var(--accent-gold); transform: scale(1.02); }
@@ -71,36 +62,50 @@
         .fade-in { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
         .fade-in.appear { opacity: 1; transform: translateY(0); }
 
-        footer { padding: 40px; text-align: center; border-top: 1px solid var(--border-glass); color: var(--text-muted); font-size: 12px; margin-top: 60px; }
+        footer { padding: 40px; text-align: center; border-top: 1px solid var(--border-glass); color: var(--text-muted); font-size: 12px; margin-top: 60px; padding-bottom: 80px; }
 
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3,11,20,0.95); backdrop-filter: blur(15px); z-index: 1000; justify-content: center; align-items: center; }
         .modal-content { background: #0a1520; border: 1px solid var(--accent-gold); padding: 40px; border-radius: 20px; width: 90%; max-width: 500px; position: relative; }
         .btn-glow { width: 100%; background: var(--accent-gold); color: black; border: none; padding: 15px; border-radius: 30px; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 20px; text-transform: uppercase; }
 
+        /* --- Floating WhatsApp Button --- */
+        .floating-wa { position: fixed; bottom: 30px; background-color: #25D366; color: white; border-radius: 50px; padding: 15px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; transition: transform 0.3s; }
+        .floating-wa:hover { transform: scale(1.1); }
+        body[dir="rtl"] .floating-wa { left: 30px; right: auto; }
+        body[dir="ltr"] .floating-wa { right: 30px; left: auto; }
+
+        /* --- Animated Icons Section --- */
+        .anim-icon { display: inline-block; font-size: 38px; filter: drop-shadow(0 0 15px var(--accent-gold)); }
+        .fly { animation: flyAnim 4s ease-in-out infinite; }
+        @keyframes flyAnim { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-10px, -15px) rotate(-5deg); } }
+        .float { animation: floatAnim 3s ease-in-out infinite; }
+        @keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        .pulse { animation: pulseAnim 3s ease-in-out infinite; }
+        @keyframes pulseAnim { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px var(--accent-gold)); } 50% { transform: scale(1.15); filter: drop-shadow(0 0 25px #FFF); } }
+        .rock { animation: rockAnim 3s ease-in-out infinite; }
+        @keyframes rockAnim { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+
         @media (max-width: 768px) { .hero h1 { font-size: 36px; } header { flex-direction: column; gap: 15px; } nav ul { gap: 10px; flex-wrap: wrap; justify-content: center; } .social-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
-<body id="main-body" dir="ltr">
-
-    <div class="ambient-light light-1"></div>
+<body id="main-body" dir="rtl"> <div class="ambient-light light-1"></div>
     <div class="ambient-light light-2"></div>
 
     <header>
         <div class="brand-container">
             <img src="https://i.postimg.cc/Js6V2vvW/logo.png" alt="Logo" class="logo-img">
-            <div class="agency-name" data-key="agency_name">Buendia Groupe</div>
+            <div class="agency-name" data-key="agency_name">گروه بوئندیا</div>
         </div>
         <nav>
             <ul>
-                <li><a href="tel:+34614066200" class="phone-link">(+34) 614 066 200</a></li>
-                <li><a href="#" data-key="nav_home">Home</a></li>
-                <li><a href="#career" data-key="nav_career">Career</a></li>
-                <li><a href="#edu" data-key="nav_edu">Education</a></li>
-                <li><a href="#life" data-key="nav_life">Spain</a></li>
+                <li><a href="tel:+34614066200" class="phone-link" dir="ltr">(+34) 614 066 200</a></li>
+                <li><a href="#" data-key="nav_home">خانه</a></li>
+                <li><a href="#services" data-key="services_title">راه‌کارهای مهاجرتی</a></li>
+                <li><a href="#edu" data-key="nav_edu">تحصیل</a></li>
+                <li><a href="#life" data-key="nav_life">اسپانیا</a></li>
                 <li>
                     <select class="language-select" id="lang-selector" onchange="changeLanguage()">
-                        <option value="en">EN</option>
-                        <option value="fa">FA</option>
+                        <option value="fa" selected>FA</option> <option value="en">EN</option>
                     </select>
                 </li>
             </ul>
@@ -108,44 +113,27 @@
     </header>
 
     <section class="hero fade-in">
-        <h1 data-key="hero_title">Your Future in Spain Starts Here.</h1>
-        <p data-key="hero_desc">Bespoke residency, immigration, and career consulting for the global professional.</p>
+        <h1 data-key="hero_title">آینده شما در اسپانیا از اینجا شروع می شود</h1>
+        <p data-key="hero_desc">مشاوره تخصصی اقامت، مهاجرت و شغلی برای حرفه‌ای‌های جهانی.</p>
     </section>
 
-    <section id="career" class="page-section">
+    <section id="services" class="page-section">
         <div class="section-title fade-in">
-            <p data-key="career_sub">Professional Ecosystem</p>
-            <h2 data-key="career_title">Careers & Salaries</h2>
+            <p>Services</p>
+            <h2><span class="anim-icon fly">✈️</span> <span data-key="services_title">راه‌کارهای مهاجرتی</span></h2>
         </div>
         <div class="grid">
-            <div class="aura-card fade-in">
-                <h3 data-key="sal_title">💰 Monthly Net Salaries</h3>
-                <table class="data-table">
-                    <tr><td data-key="job_it">IT & Development</td><td data-key="pay_it">€2,500 - €4,000+</td></tr>
-                    <tr><td data-key="job_den">Dental (Post-Homologación)</td><td data-key="pay_den">€3,000 - €5,500+</td></tr>
-                    <tr><td data-key="job_com">Sales & Trade</td><td data-key="pay_com">€1,800 - €3,000</td></tr>
-                    <tr><td data-key="job_des">Graphic Design</td><td data-key="pay_des">€1,500 - €2,500</td></tr>
-                    <tr><td data-key="job_adm">Administrative</td><td data-key="pay_adm">€1,200 - €1,800</td></tr>
-                </table>
+            <div class="aura-card fade-in" onclick="openModal('student')" style="cursor:pointer">
+                <h3 data-key="srv_student_title">ویزای تحصیلی</h3>
+                <p data-key="srv_student_desc">پذیرش و اقامت کامل.</p>
             </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="ben_title">⚖️ Labor Benefits</h3>
-                <p data-key="ben_desc">• Automatic health & pension coverage.
-• 30 days of paid annual leave.
-• Strong remote work culture.
-• Transparent, legally-binding contracts.
-• High flexibility and friendly work culture.</p>
+            <div class="aura-card fade-in" onclick="openModal('nomad')" style="cursor:pointer">
+                <h3 data-key="srv_nomad_title">دیجیتال نومد</h3>
+                <p data-key="srv_nomad_desc">اقامت ۳ ساله کار از راه دور.</p>
             </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="find_title">🔍 Job Hunting</h3>
-                <p data-key="find_desc">Key Platforms: LinkedIn, InfoJobs, Indeed, Tecnoempleo (IT), Domestika (Design).
-Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
-            </div>
-        </div>
-        <div class="highlight-box fade-in">
-            <h3 data-key="high_title" style="color:white">High-Demand Sectors</h3>
-            <div id="pill-container">
-                <span class="pill">AI & IT</span><span class="pill">Medicine & Dental</span><span class="pill">Business Management</span><span class="pill">Architecture</span><span class="pill">Tourism</span><span class="pill">Fashion Design</span>
+            <div class="aura-card fade-in" onclick="openModal('wealth')" style="cursor:pointer">
+                <h3 data-key="srv_wealth_title">تمکن مالی</h3>
+                <p data-key="srv_wealth_desc">مهاجرت با درآمد غیرفعال.</p>
             </div>
         </div>
     </section>
@@ -153,7 +141,7 @@ Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
     <section id="edu" class="page-section">
         <div class="section-title fade-in">
             <p data-key="edu_sub">Academic Excellence</p>
-            <h2 data-key="edu_title">Study in Spain</h2>
+            <h2><span class="anim-icon float">🎓</span> <span data-key="edu_title">Study in Spain</span></h2>
         </div>
         <div class="grid">
             <div class="aura-card fade-in">
@@ -181,7 +169,7 @@ Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
     <section id="climate" class="page-section">
         <div class="section-title fade-in">
             <p data-key="climate_sub">Environment</p>
-            <h2 data-key="climate_title">Spain's Climate</h2>
+            <h2><span class="anim-icon pulse">☀️</span> <span data-key="climate_title">Spain's Climate</span></h2>
         </div>
         <div class="grid">
             <div class="aura-card fade-in">
@@ -210,7 +198,7 @@ Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
     <section id="life" class="page-section">
         <div class="section-title fade-in">
             <p data-key="life_sub">Discovery</p>
-            <h2 data-key="life_title">Life in Spain</h2>
+            <h2><span class="anim-icon rock">🧳</span> <span data-key="life_title">Life in Spain</span></h2>
         </div>
         <div class="grid">
             <div class="aura-card fade-in">
@@ -247,30 +235,15 @@ Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
         </div>
     </section>
 
-    <section id="services" class="page-section">
-        <div class="section-title fade-in">
-            <p>Services</p>
-            <h2 data-key="services_title">Immigration Solutions</h2>
-        </div>
-        <div class="grid">
-            <div class="aura-card fade-in" onclick="openModal('student')" style="cursor:pointer">
-                <h3 data-key="srv_student_title">Student Visas</h3>
-                <p data-key="srv_student_desc">Complete admission and residency support.</p>
-            </div>
-            <div class="aura-card fade-in" onclick="openModal('nomad')" style="cursor:pointer">
-                <h3 data-key="srv_nomad_title">Digital Nomad</h3>
-                <p data-key="srv_nomad_desc">3-year remote work residency.</p>
-            </div>
-            <div class="aura-card fade-in" onclick="openModal('wealth')" style="cursor:pointer">
-                <h3 data-key="srv_wealth_title">Non-Lucrative</h3>
-                <p data-key="srv_wealth_desc">Passive income based relocation.</p>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <p>&copy; 2026 Buendia Groupe. All rights reserved.</p>
     </footer>
+
+    <a href="https://wa.me/34614066200" target="_blank" class="floating-wa">
+        <svg viewBox="0 0 32 32" width="35" height="35" fill="white">
+            <path d="M16.05 2.5a13.45 13.45 0 0 0-11.4 20.6l-2.1 6.3 6.5-2.1A13.45 13.45 0 1 0 16.05 2.5zm0 24.5c-2.1 0-4.1-.6-5.9-1.6l-.4-.2-4.4 1.4 1.4-4.2-.3-.5A11.2 11.2 0 1 1 16.05 27.1zm6.2-8.5c-.3-.2-2-.1-2.3-.1-.3 0-.5.1-.7.4-.2.3-.9 1.1-1.1 1.3-.2.3-.5.3-.8.2-.3-.1-1.4-.5-2.7-1.7-1-1-1.7-2.1-1.9-2.4-.2-.3 0-.5.1-.6.2-.2.4-.4.5-.6.2-.2.2-.4.3-.6.1-.3 0-.5-.1-.7s-1.1-2.6-1.5-3.6c-.4-1-.7-.8-1-.8h-.8c-.3 0-.8.1-1.2.6-.4.5-1.6 1.6-1.6 3.8 0 2.2 1.6 4.4 1.9 4.7.2.3 3.2 4.9 7.7 6.8 1.1.5 1.9.7 2.6.9 1.1.3 2 .3 2.8.2.8-.1 2.6-1.1 2.9-2.1.3-1 .3-1.9.2-2.1-.2-.2-.5-.3-.9-.4z"></path>
+        </svg>
+    </a>
 
     <div id="contactModal" class="modal">
         <div class="modal-content">
@@ -279,8 +252,8 @@ Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
                 <h2 style="color:white; margin-top:0">Consultation</h2>
                 <p style="color:var(--accent-gold); font-size:14px">Service: <span id="dynamicServiceName"></span></p>
                 <form id="buendiaForm" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group"><label>Phone</label><input type="tel" name="Phone" required placeholder="+34 XXX XXX XXX" dir="ltr"></div>
-                    <div class="form-group"><label>Details</label><textarea name="Details" rows="4" required placeholder="Your request..."></textarea></div>
+                    <div class="form-group"><label>Phone</label><input type="tel" name="Phone" required placeholder="+34 XXX XXX XXX" dir="ltr" style="width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px; border-radius: 10px; border: none;"></div>
+                    <div class="form-group"><label>Details</label><textarea name="Details" rows="4" required placeholder="Your request..." style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 10px; border: none;"></textarea></div>
                     <button type="submit" class="btn-glow" id="submitBtn">Send Request</button>
                 </form>
             </div>
@@ -294,26 +267,18 @@ Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
     <script>
         const translations = {
             en: {
-                agency_name: "Buendia Groupe", nav_home: "Home", nav_career: "Career", nav_edu: "Education", nav_life: "Spain",
+                agency_name: "Buendia Groupe", nav_home: "Home", nav_edu: "Education", nav_life: "Spain",
                 hero_title: "Your Future in Spain Starts Here.", hero_desc: "Bespoke residency, immigration, and career consulting for the global professional.",
-                career_sub: "Professional Ecosystem", career_title: "Careers & Salaries", sal_title: "💰 Monthly Net Salaries",
-                job_it: "IT & Development", pay_it: "€2,500 - €4,000+", job_den: "Dental (Post-Homologación)", pay_den: "€3,000 - €5,500+", job_com: "Sales & Trade", pay_com: "€1,800 - €3,000", job_des: "Graphic Design", pay_des: "€1,500 - €2,500", job_adm: "Administrative", pay_adm: "€1,200 - €1,800",
-                ben_title: "⚖️ Labor Benefits", ben_desc: "• Automatic health & pension coverage.\n• 30 days of paid annual leave.\n• Strong remote work culture.\n• Transparent, legally-binding contracts.\n• High flexibility and friendly work culture.",
-                find_title: "🔍 Job Hunting", find_desc: "Key Platforms: LinkedIn, InfoJobs, Indeed, Tecnoempleo (IT), Domestika (Design).\nSuccess Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.",
-                high_title: "High-Demand Sectors", edu_sub: "Academic Excellence", edu_title: "Study in Spain", cost_title: "🎓 Tuition Fees", deg_title: "📜 Degree Levels", edu_ben_title: "✨ Student Perks", edu_ben_desc: "• Part-time work permit (30h/week).\n• Lower cost compared to US/UK.\n• Path to work permit post-graduation.\n• Top-tier EU accreditation.",
+                edu_sub: "Academic Excellence", edu_title: "Study in Spain", cost_title: "🎓 Tuition Fees", deg_title: "📜 Degree Levels", edu_ben_title: "✨ Student Perks", edu_ben_desc: "• Part-time work permit (30h/week).\n• Lower cost compared to US/UK.\n• Path to work permit post-graduation.\n• Top-tier EU accreditation.",
                 climate_sub: "Environment", climate_title: "Spain's Climate", cli_med_title: "🌊 Mediterranean", cli_med_desc: "Mild winters and hot, humid summers. Perfect for coastal lovers. (Barcelona, Valencia)", cli_south_title: "🌵 The South", cli_south_desc: "The warmest region. Summers can exceed 40°C. Mild and sunny winters. (Malaga, Seville)", cli_north_title: "🧊 The North", cli_north_desc: "Green, lush, and rainy. Similar to northern Iran. (Bilbao, Asturias)", cli_central_title: "🏜️ Central Spain", cli_central_desc: "Hot, dry summers and cold winters. Significant day/night shifts. (Madrid)", cli_islands_title: "🏖️ The Islands", cli_islands_desc: "Subtropical perfection. Average 20°C - 26°C year-round. (Canary Islands)",
                 life_sub: "Discovery", life_title: "Life in Spain", life_style_title: "Lifestyle", life_style_desc: "Social, welcoming, and relaxed. A strong focus on family values with vibrant days and lively nights.", life_cost_title: "Cost of Living", life_cost_desc: "Highly accessible compared to Northern Europe. Average costs around €1000-€1500.", life_sec_title: "Security", life_sec_desc: "Ranked among the safest countries in Europe with incredibly low severe crime rates.", life_med_title: "Healthcare", life_med_desc: "World-class infrastructure offering extensive public and private care.",
                 social_sub: "Stay Informed", social_title: "Join Our Community",
                 services_title: "Immigration Solutions", srv_student_title: "Student Visas", srv_student_desc: "Complete support.", srv_nomad_title: "Digital Nomad", srv_nomad_desc: "3-year remote work residency.", srv_wealth_title: "Non-Lucrative", srv_wealth_desc: "Passive income based relocation."
             },
             fa: {
-                agency_name: "گروه بوئندیا", nav_home: "خانه", nav_career: "کار", nav_edu: "تحصیل", nav_life: "اسپانیا",
+                agency_name: "گروه بوئندیا", nav_home: "خانه", nav_edu: "تحصیل", nav_life: "اسپانیا",
                 hero_title: "آینده شما در اسپانیا از اینجا شروع می شود", hero_desc: "مشاوره تخصصی اقامت، مهاجرت و شغلی برای حرفه‌ای‌های جهانی.",
-                career_sub: "اکوسیستم حرفه‌ای", career_title: "کار و حقوق‌ها", sal_title: "💰 میانگین حقوق خالص (ماهانه)",
-                job_it: "آی‌تی و برنامه‌نویسی", pay_it: "۲۵۰۰ تا ۴۰۰۰ یورو", job_den: "دندانپزشکی (بعد از معادل‌سازی)", pay_den: "۳۰۰۰ تا ۵۵۰۰ یورو", job_com: "فروش و تجارت", pay_com: "۱۸۰۰ تا ۳۰۰۰ یورو", job_des: "طراحی گرافیک", pay_des: "۱۵۰۰ تا ۲۵۰۰ یورو", job_adm: "کارهای اداری", pay_adm: "۱۲۰۰ تا ۱۸۰۰ یورو",
-                ben_title: "⚖️ مزایای کاری", ben_desc: "• بیمه درمانی و بازنشستگی خودکار.\n• ۳۰ روز مرخصی سالانه با حقوق.\n• فرهنگ قوی کار از راه دور.\n• قراردادهای رسمی و شفاف.\n• محیط کاری دوستانه و منعطف.",
-                find_title: "🔍 پیدا کردن کار", find_desc: "وب‌سایت‌ها: LinkedIn, InfoJobs, Indeed, Tecnoempleo (IT), Domestika.\nنکات: رزومه اسپانیایی، بهینه‌سازی لینکدین، سطح زبان B1.",
-                high_title: "بخش‌های پرتقاضا", edu_sub: "تعالی آکادمیک", edu_title: "تحصیل در اسپانیا", cost_title: "🎓 هزینه تحصیل", deg_title: "📜 مقاطع تحصیلی", edu_ben_title: "✨ مزایای دانشجویی", edu_ben_desc: "• اجازه کار پاره‌وقت (۳۰ ساعت).\n• هزینه کمتر نسبت به آمریکا و انگلیس.\n• امکان تبدیل ویزا به کار بعد از تحصیل.\n• اعتبار بالای مدارک در کل اتحادیه اروپا.",
+                edu_sub: "تعالی آکادمیک", edu_title: "تحصیل در اسپانیا", cost_title: "🎓 هزینه تحصیل", deg_title: "📜 مقاطع تحصیلی", edu_ben_title: "✨ مزایای دانشجویی", edu_ben_desc: "• اجازه کار پاره‌وقت (۳۰ ساعت).\n• هزینه کمتر نسبت به آمریکا و انگلیس.\n• امکان تبدیل ویزا به کار بعد از تحصیل.\n• اعتبار بالای مدارک در کل اتحادیه اروپا.",
                 climate_sub: "اقلیم", climate_title: "آب‌وهوای اسپانیا", cli_med_title: "🌊 سواحل مدیترانه", cli_med_desc: "زمستان‌های ملایم و تابستان‌های گرم. مناسب برای دوست‌داران هوای معتدل ساحلی. (بارسلونا، والنسیا)", cli_south_title: "🌵 جنوب اسپانیا", cli_south_desc: "گرم‌ترین بخش کشور. تابستان‌های بالای ۴۰ درجه و زمستان‌های آفتابی. (مالاگا، سویا)", cli_north_title: "🧊 شمال اسپانیا", cli_north_desc: "سبز و بارانی. شبیه به شمال ایران. تابستان‌های خنک و زمستان‌های مرطوب. (بیلبائو، آستوریاس)", cli_central_title: "🏜️ مرکز کشور", cli_central_desc: "تابستان‌های گرم و خشک و زمستان‌های سرد. اختلاف دمای زیاد شب و روز. (مادرید)", cli_islands_title: "🏖️ جزایر اسپانیا", cli_islands_desc: "بهشت معتدل. دمای ۲۰ تا ۲۶ درجه در تمام سال. (جزایر قناری)",
                 life_sub: "کشف", life_title: "زندگی در اسپانیا", life_style_title: "سبک زندگی", life_style_desc: "اجتماعی و پذیرا. تمرکز بالا بر ارزش‌های خانواده.", life_cost_title: "هزینه زندگی", life_cost_desc: "مقرون‌به‌صرفه. هزینه متوسط حدود ۱۰۰۰ تا ۱۵۰۰ یورو.", life_sec_title: "امنیت", life_sec_desc: "یکی از امن‌ترین کشورهای اروپا با نرخ جرم بسیار پایین.", life_med_title: "بهداشت", life_med_desc: "زیرساخت‌های پزشکی در سطح جهانی.",
                 social_sub: "اطلاع‌رسانی", social_title: "به جامعه ما بپیوندید",
@@ -323,7 +288,10 @@ Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
 
         function changeLanguage() {
             const lang = document.getElementById('lang-selector').value;
-            document.body.setAttribute('dir', translations[lang].direction);
+            // Set layout direction based on language
+            document.body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+            
+            // Translate all elements with a data-key
             document.querySelectorAll('[data-key]').forEach(el => {
                 const key = el.getAttribute('data-key');
                 if (translations[lang][key]) el.innerText = translations[lang][key];
@@ -343,11 +311,12 @@ Success Tips: Spanish CV format, LinkedIn optimization, B1 Spanish level.</p>
             const btn = document.getElementById('submitBtn');
             btn.innerText = "Sending...";
             await fetch("https://formspree.io/f/xyklpkba", { method: "POST", body: new FormData(e.target), headers: { 'Accept': 'application/json' } });
-            document.getElementById('formSection').classList.add('hidden');
-            document.getElementById('successSection').classList.remove('hidden');
+            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('successSection').style.display = 'block';
         }
 
         document.addEventListener("DOMContentLoaded", () => {
+            changeLanguage(); // Forces the default language to apply immediately on load
             const obs = new IntersectionObserver(ents => ents.forEach(e => { if(e.isIntersecting) e.target.classList.add('appear'); }), { threshold: 0.1 });
             document.querySelectorAll('.fade-in').forEach(f => obs.observe(f));
         });
