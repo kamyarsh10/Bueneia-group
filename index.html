@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buendia Groupe | Premium Spain Residency Experts</title>
+    <title>Buendia Groupe | Premium Spain Residency</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --bg-obsidian: #030b14; 
+            --bg-card: #0a1520;
             --accent-gold: #C5A059; 
             --accent-glow: rgba(197, 160, 89, 0.4);
             --text-main: #F8F9FA;
@@ -23,52 +24,64 @@
         }
 
         html { scroll-behavior: smooth; }
-        body { font-family: var(--font-en); margin: 0; padding: 0; color: var(--text-main); background-color: var(--bg-obsidian); line-height: 1.6; overflow-x: hidden; position: relative; }
+        body { font-family: var(--font-en); margin: 0; padding: 0; color: var(--text-main); background-color: var(--bg-obsidian); line-height: 1.8; overflow-x: hidden; position: relative; }
         body[dir="rtl"] { font-family: var(--font-fa); }
         
         .ambient-light { position: absolute; border-radius: 50%; filter: blur(120px); z-index: -1; opacity: 0.25; pointer-events: none; }
         .light-1 { top: -5%; left: -5%; width: 40vw; height: 40vw; background: var(--accent-gold); }
         .light-2 { top: 30%; right: -5%; width: 50vw; height: 50vw; background: #0a2540; }
 
-        header { background: rgba(3, 11, 20, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-glass); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        header { background: rgba(3, 11, 20, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-glass); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
         .brand-container { display: flex; align-items: center; gap: 15px; }
-        .logo-img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 15px var(--accent-glow); }
+        .logo-img { height: 45px; width: 45px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 15px var(--accent-glow); }
         .agency-name { font-size: 20px; font-weight: 700; background: linear-gradient(to right, #FFF, var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; align-items: center; padding: 0;}
-        nav ul li a { font-size: 13px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; align-items: center; padding: 0;}
+        nav ul li a { font-size: 14px; font-weight: 500; color: var(--text-muted); transition: var(--transition); text-decoration: none; }
         nav ul li a:hover { color: white; text-shadow: 0 0 8px var(--accent-glow); }
-        .phone-link { border: 1px solid var(--accent-gold); padding: 8px 18px; border-radius: 30px; color: var(--accent-gold) !important; }
 
-        .hero { padding: 140px 20px; text-align: center; }
-        .hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 700; margin-bottom: 20px; background: linear-gradient(135deg, #FFF 0%, var(--accent-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+        .hero { padding: 120px 20px 80px; text-align: center; }
+        .hero h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #FFF 0%, var(--accent-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.3; }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: var(--accent-gold); color: black; padding: 15px 35px; border-radius: 30px; font-weight: 700; text-decoration: none; transition: var(--transition); box-shadow: 0 0 20px var(--accent-glow); border: none; font-family: inherit; font-size: 16px; cursor: pointer; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 30px var(--accent-gold); }
+        .btn-secondary { background: transparent; color: white; border: 1px solid var(--border-glass); padding: 15px 35px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: var(--transition); }
+        .btn-secondary:hover { border-color: var(--accent-gold); background: rgba(197, 160, 89, 0.1); }
 
         .page-section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 { font-size: 32px; color: white; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; gap: 15px; }
-        .section-title p { color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; }
+        .section-title p { color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 600;}
 
+        /* Detailed Explaination Cards */
+        .detail-card { background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px; padding: 40px; margin-bottom: 30px; display: flex; flex-direction: column; gap: 15px; transition: var(--transition); position: relative; overflow: hidden; }
+        .detail-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .detail-card h3 { color: var(--accent-gold); font-size: 24px; margin: 0; display: flex; align-items: center; gap: 10px; }
+        .detail-card p { color: var(--text-muted); font-size: 15px; text-align: justify; }
+        .detail-card ul { color: var(--text-muted); font-size: 15px; padding-inline-start: 20px; }
+        .detail-card ul li { margin-bottom: 10px; }
+        .detail-card strong { color: white; }
+
+        /* Standard Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .aura-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 30px; border-radius: 20px; transition: var(--transition); backdrop-filter: blur(10px); }
-        .aura-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .aura-card h3 { font-size: 18px; color: white; margin-top: 0; display: flex; align-items: center; gap: 10px; }
-        .aura-card p { font-size: 14px; color: var(--text-muted); white-space: pre-line; }
+        .aura-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+        .aura-card h3 { font-size: 18px; color: white; margin-top: 0; margin-bottom: 15px; }
+        .aura-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
 
-        .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-        .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px; border-radius: 15px; border: 1px solid var(--border-glass); background: rgba(255,255,255,0.02); transition: var(--transition); font-weight: 600; color: white; }
-        .social-btn:hover { background: rgba(197, 160, 89, 0.1); border-color: var(--accent-gold); transform: scale(1.02); }
+        /* Consultation Form Section */
+        .consult-box { background: linear-gradient(145deg, #0a1520, #030b14); border: 1px solid var(--accent-gold); border-radius: 30px; padding: 50px; text-align: center; box-shadow: 0 0 30px rgba(197, 160, 89, 0.15); position: relative; overflow: hidden; }
+        .consult-box form { max-width: 600px; margin: 30px auto 0; display: flex; flex-direction: column; gap: 20px; }
+        .consult-box input, .consult-box textarea, .consult-box select { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); padding: 15px 20px; border-radius: 15px; color: white; font-family: inherit; font-size: 15px; box-sizing: border-box; transition: 0.3s; }
+        .consult-box input:focus, .consult-box textarea:focus { outline: none; border-color: var(--accent-gold); background: rgba(255,255,255,0.08); }
 
         .fade-in { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
         .fade-in.appear { opacity: 1; transform: translateY(0); }
 
-        footer { padding: 40px; text-align: center; border-top: 1px solid var(--border-glass); color: var(--text-muted); font-size: 12px; margin-top: 60px; padding-bottom: 80px; }
+        footer { padding: 40px; text-align: center; border-top: 1px solid var(--border-glass); color: var(--text-muted); font-size: 13px; margin-top: 40px; padding-bottom: 80px; }
 
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3,11,20,0.95); backdrop-filter: blur(15px); z-index: 1000; justify-content: center; align-items: center; }
-        .modal-content { background: #0a1520; border: 1px solid var(--accent-gold); padding: 40px; border-radius: 20px; width: 90%; max-width: 500px; position: relative; }
-        .btn-glow { width: 100%; background: var(--accent-gold); color: black; border: none; padding: 15px; border-radius: 30px; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 20px; text-transform: uppercase; }
-
-        /* --- Floating WhatsApp Button --- */
+        /* Floating WhatsApp Button */
         .floating-wa { position: fixed; bottom: 30px; background-color: #25D366; color: white; border-radius: 50px; padding: 15px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; transition: transform 0.3s; }
         .floating-wa:hover { transform: scale(1.1); }
         body[dir="rtl"] .floating-wa { left: 30px; right: auto; }
@@ -77,20 +90,16 @@
         /* --- SVG Doodle Animations Section --- */
         .anim-icon { display: inline-flex; justify-content: center; align-items: center; filter: drop-shadow(0 0 10px var(--accent-gold)); color: var(--accent-gold); }
         .anim-icon svg { width: 38px; height: 38px; }
-        
         .fly { animation: flyAnim 4s ease-in-out infinite; }
         @keyframes flyAnim { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-8px, -8px) rotate(-5deg); } }
-        
         .float { animation: floatAnim 3s ease-in-out infinite; }
         @keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        
-        .pulse { animation: pulseAnim 3s ease-in-out infinite; }
-        @keyframes pulseAnim { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px var(--accent-gold)); } 50% { transform: scale(1.1); filter: drop-shadow(0 0 20px var(--accent-gold)); } }
-        
-        .rock { animation: rockAnim 3s ease-in-out infinite; }
-        @keyframes rockAnim { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 36px; } header { flex-direction: column; gap: 15px; } nav ul { gap: 10px; flex-wrap: wrap; justify-content: center; } .social-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { 
+            header { flex-direction: column; gap: 15px; padding-bottom: 20px;} 
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; } 
+            .consult-box { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body id="main-body" dir="rtl">
@@ -105,13 +114,14 @@
         </div>
         <nav>
             <ul>
-                <li><a href="tel:+34614066200" class="phone-link" dir="ltr">(+34) 614 066 200</a></li>
                 <li><a href="#" data-key="nav_home">خانه</a></li>
-                <li><a href="#services" data-key="services_title">راه‌کارهای مهاجرتی</a></li>
+                <li><a href="#services" data-key="nav_services">خدمات</a></li>
+                <li><a href="#details" data-key="nav_visas">مهاجرت</a></li>
                 <li><a href="#edu" data-key="nav_edu">تحصیل</a></li>
                 <li><a href="#life" data-key="nav_life">اسپانیا</a></li>
+                <li><a href="#consult" data-key="nav_consult" style="color:var(--accent-gold); font-weight:700;">مشاوره</a></li>
                 <li>
-                    <select class="language-select" id="lang-selector" onchange="changeLanguage()">
+                    <select id="lang-selector" onchange="changeLanguage()" style="background:transparent; color:white; border:1px solid var(--border-glass); border-radius:5px; padding:3px;">
                         <option value="fa" selected>FA</option>
                         <option value="en">EN</option>
                     </select>
@@ -121,249 +131,216 @@
     </header>
 
     <section class="hero fade-in">
-        <h1 data-key="hero_title">آینده شما در اسپانیا از اینجا شروع می شود</h1>
-        <p data-key="hero_desc">مشاوره تخصصی اقامت، مهاجرت و شغلی برای حرفه‌ای‌های جهانی.</p>
+        <h1 data-key="hero_title">اقامت اسپانیا با اطمینان و سرعت</h1>
+        <p data-key="hero_desc">از اخذ اقامت و گلدن ویزا تا ثبت شرکت و خرید ملک. با همراهی شبکه حقوقی و مالیاتی محلی در اسپانیا، مسیر زندگی اروپایی خود را امن و حرفه‌ای آغاز کنید.</p>
+        <div class="hero-buttons">
+            <a href="#consult" class="btn-primary" data-key="btn_consult">مشاوره رایگان</a>
+            <a href="#details" class="btn-secondary" data-key="btn_learn">اطلاعات بیشتر</a>
+        </div>
     </section>
 
     <section id="services" class="page-section">
         <div class="section-title fade-in">
-            <p>Services</p>
-            <h2>
-                <span class="anim-icon fly">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                    </svg>
-                </span>
-                <span data-key="services_title">راه‌کارهای مهاجرتی</span>
-            </h2>
+            <p data-key="srv_sub">Premium Categories</p>
+            <h2><span class="anim-icon float"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span> <span data-key="srv_title">خدمات اصلی</span></h2>
         </div>
         <div class="grid">
-            <div class="aura-card fade-in" onclick="openModal('student')" style="cursor:pointer">
-                <h3 data-key="srv_student_title">ویزای تحصیلی</h3>
-                <p data-key="srv_student_desc">پذیرش و اقامت کامل.</p>
+            <div class="aura-card fade-in">
+                <h3 data-key="cat_1_title">اقامت و ویزا</h3>
+                <p data-key="cat_1_desc">تحلیل و طراحی مسیر اقامت (تمکن مالی، گلدن ویزا، دیجیتال نومد) بر اساس پروفایل واقعی شما.</p>
             </div>
-            <div class="aura-card fade-in" onclick="openModal('nomad')" style="cursor:pointer">
-                <h3 data-key="srv_nomad_title">دیجیتال نومد</h3>
-                <p data-key="srv_nomad_desc">اقامت ۳ ساله کار از راه دور.</p>
+            <div class="aura-card fade-in">
+                <h3 data-key="cat_2_title">سرمایه‌گذاری ملک</h3>
+                <p data-key="cat_2_desc">انتخاب شهر، نوع ملک و ساختار حقوقی با نگاه ترکیبیِ «زندگی مرفه + بازده سرمایه بالا».</p>
             </div>
-            <div class="aura-card fade-in" onclick="openModal('wealth')" style="cursor:pointer">
-                <h3 data-key="srv_wealth_title">تمکن مالی</h3>
-                <p data-key="srv_wealth_desc">مهاجرت با درآمد غیرفعال.</p>
+            <div class="aura-card fade-in">
+                <h3 data-key="cat_3_title">ثبت شرکت</h3>
+                <p data-key="cat_3_desc">طراحی ساختار شرکت، حساب بانکی و مالیات برای کارآفرینان و کسب‌وکارهای بین‌المللی.</p>
+            </div>
+            <div class="aura-card fade-in">
+                <h3 data-key="cat_4_title">تحصیل و آینده</h3>
+                <p data-key="cat_4_desc">انتخاب دانشگاه و دوره‌های زبان برای ساختن مسیر بلندمدت ورود هوشمندانه به بازار کار.</p>
+            </div>
+            <div class="aura-card fade-in">
+                <h3 data-key="cat_5_title">امور مالی و بانکی</h3>
+                <p data-key="cat_5_desc">افتتاح حساب بانکی بین‌المللی، فهم دقیق مالیات و برنامه‌ریزی فلو پول بین ایران و اسپانیا.</p>
+            </div>
+            <div class="aura-card fade-in">
+                <h3 data-key="cat_6_title">اسکان (Relocation)</h3>
+                <p data-key="cat_6_desc">از انتخاب محله و مدرسه فرزندان تا بیمه و اجاره خانه؛ همراهی شما بعد از ورود به اسپانیا.</p>
             </div>
         </div>
     </section>
 
-    <section id="edu" class="page-section">
+    <section id="details" class="page-section">
         <div class="section-title fade-in">
-            <p data-key="edu_sub">Academic Excellence</p>
-            <h2>
-                <span class="anim-icon float">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                    </svg>
-                </span>
-                <span data-key="edu_title">Study in Spain</span>
-            </h2>
+            <p data-key="det_sub">Pathways & Explanations</p>
+            <h2><span class="anim-icon fly"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></span> <span data-key="det_title">مسیرهای اصلی مهاجرت</span></h2>
         </div>
-        <div class="grid">
-            <div class="aura-card fade-in">
-                <h3 data-key="cost_title">🎓 Tuition Fees</h3>
-                <p><strong style="color:white">Public Universities:</strong> €700 - €3,500 / Year
-<strong style="color:white">Private Universities:</strong> €7,000 - €18,000 / Year
-(Medical/Dental: €20k - €28k)</p>
-            </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="deg_title">📜 Degree Levels</h3>
-                <p>• <strong>Grado (Bachelor):</strong> 4 Years
-• <strong>Máster (Graduate):</strong> 1-2 Years
-• <strong>Doctorado (PhD):</strong> 3-5 Years</p>
-            </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="edu_ben_title">✨ Student Perks</h3>
-                <p data-key="edu_ben_desc">• Part-time work permit (30h/week).
-• Lower cost compared to US/UK.
-• Path to work permit post-graduation.
-• Top-tier EU accreditation.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="climate" class="page-section">
-        <div class="section-title fade-in">
-            <p data-key="climate_sub">Environment</p>
-            <h2>
-                <span class="anim-icon pulse">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </span>
-                <span data-key="climate_title">Spain's Climate</span>
-            </h2>
+        <div class="detail-card fade-in">
+            <h3 data-key="det_golden_title">🇪🇸 گلدن ویزا (ویزای طلایی)</h3>
+            <p data-key="det_golden_desc">ویزای طلایی اسپانیا دریچه ورود سریع شما به اروپا است. اگر شما شهروند خارج از اتحادیه اروپا هستید، می‌توانید با <strong>سرمایه‌گذاری حداقل ۵۰۰ هزار یورو</strong> در بخش املاک و مستغلات، اقامت دائم اسپانیا را برای خود، همسر و فرزندان خود دریافت کنید.</p>
+            <ul>
+                <li data-key="det_golden_1">عدم نیاز به حضور فیزیکی دائم در اسپانیا (حفظ تجارت در ایران).</li>
+                <li data-key="det_golden_2">اجازه کار کامل در اسپانیا برای تمام اعضای خانواده.</li>
+                <li data-key="det_golden_3">سرمایه‌گذاری می‌تواند در یک یا چند ملک تجاری یا مسکونی انجام شود.</li>
+            </ul>
         </div>
-        <div class="grid">
-            <div class="aura-card fade-in">
-                <h3 data-key="cli_med_title">🌊 Mediterranean</h3>
-                <p data-key="cli_med_desc">Mild winters and hot, humid summers. Perfect for coastal lovers. (Barcelona, Valencia)</p>
-            </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="cli_south_title">🌵 The South</h3>
-                <p data-key="cli_south_desc">The warmest region. Summers can exceed 40°C. Mild and sunny winters. (Malaga, Seville)</p>
-            </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="cli_north_title">🧊 The North</h3>
-                <p data-key="cli_north_desc">Green, lush, and rainy. Similar to northern Iran. (Bilbao, Asturias)</p>
-            </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="cli_central_title">🏜️ Central Spain</h3>
-                <p data-key="cli_central_desc">Hot, dry summers and cold winters. Significant day/night shifts. (Madrid)</p>
-            </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="cli_islands_title">🏖️ The Islands</h3>
-                <p data-key="cli_islands_desc">Subtropical perfection. Average 20°C - 26°C year-round. (Canary Islands)</p>
-            </div>
+
+        <div class="detail-card fade-in">
+            <h3 data-key="det_nonluc_title">💶 اقامت تمکن مالی (Non-Lucrative)</h3>
+            <p data-key="det_nonluc_desc">منابع اقتصادی این اقامت برای آن دسته از متقاضیانی در نظر گرفته شده که <strong>درآمد ثابت و غیرفعال (Passive Income)</strong> در کشور مبدا دارند (مانند سود سپرده، اجاره ملک یا حقوق بازنشستگی) و نیازی به کار کردن در اسپانیا ندارند. این روش یکی از محبوب‌ترین و امن‌ترین راه‌ها برای خانواده‌هاست.</p>
+            <ul>
+                <li data-key="det_nonluc_1">بدون نیاز به سرمایه‌گذاری سنگین و انتقال ارز زیاد.</li>
+                <li data-key="det_nonluc_2">امکان ثبت‌نام فرزندان در بهترین مدارس بین‌المللی و دولتی اسپانیا.</li>
+                <li data-key="det_nonluc_3">پس از سال اول، امکان تبدیل به اقامت کاری یا ثبت شرکت وجود دارد.</li>
+            </ul>
+        </div>
+
+        <div class="detail-card fade-in">
+            <h3 data-key="det_student_title">🎓 ویزای تحصیلی و دانشجویی</h3>
+            <p data-key="det_student_desc">اگر به دنبال ورود هوشمندانه و کم‌هزینه به اروپا هستید، مسیر تحصیلی بهترین گزینه است. با پذیرش در دانشگاه‌ها یا کالج‌های زبان اسپانیایی (مورد تایید)، نه تنها یک ویزای بلندمدت دریافت می‌کنید، بلکه مسیر تبدیل آن به اقامت کاری پس از فارغ‌التحصیلی بسیار هموار است.</p>
+            <ul>
+                <li data-key="det_student_1">اجازه کار پاره‌وقت (تا ۳۰ ساعت در هفته) برای پوشش هزینه‌های زندگی.</li>
+                <li data-key="det_student_2">هزینه تحصیل در دانشگاه‌های دولتی اسپانیا بسیار مقرون‌به‌صرفه (۷۰۰ تا ۳۵۰۰ یورو در سال) است.</li>
+            </ul>
         </div>
     </section>
 
     <section id="life" class="page-section">
         <div class="section-title fade-in">
-            <p data-key="life_sub">Discovery</p>
-            <h2>
-                <span class="anim-icon rock">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
-                </span>
-                <span data-key="life_title">Life in Spain</span>
-            </h2>
+            <p data-key="life_sub">Discover the Country</p>
+            <h2><span data-key="life_title">چرا زندگی در اسپانیا؟</span></h2>
         </div>
         <div class="grid">
             <div class="aura-card fade-in">
-                <h3 data-key="life_style_title">Lifestyle</h3>
-                <p data-key="life_style_desc">Social, welcoming, and relaxed. A strong focus on family values with vibrant days and lively nights.</p>
+                <h3 data-key="life_med_title">کیفیت و هزینه زندگی</h3>
+                <p data-key="life_med_desc">هزینه زندگی در اسپانیا به طرز چشمگیری نسبت به شمال اروپا ارزان‌تر است. سیستم درمانی قدرتمند و امنیت شهری بسیار بالا، اسپانیا را به کشوری ایده‌آل برای خانواده‌ها تبدیل کرده است.</p>
             </div>
             <div class="aura-card fade-in">
-                <h3 data-key="life_cost_title">Cost of Living</h3>
-                <p data-key="life_cost_desc">Highly accessible compared to Northern Europe. Average costs around €1000-€1500.</p>
-            </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="life_sec_title">Security</h3>
-                <p data-key="life_sec_desc">Ranked among the safest countries in Europe with incredibly low severe crime rates.</p>
-            </div>
-            <div class="aura-card fade-in">
-                <h3 data-key="life_med_title">Healthcare</h3>
-                <p data-key="life_med_desc">World-class infrastructure offering extensive public and private care.</p>
+                <h3 data-key="life_cli_title">تنوع آب‌وهوایی بی‌نظیر</h3>
+                <p data-key="life_cli_desc">از سواحل مدیترانه‌ای گرم و آفتابی (بارسلونا، والنسیا، مالاگا) تا مناطق سرسبز و بارانی شمال، و آب‌وهوای خشک مرکز (مادرید). اسپانیا برای هر سلیقه‌ای، شهری بی‌نقص دارد.</p>
             </div>
         </div>
     </section>
 
-    <section class="page-section">
-        <div class="section-title fade-in">
-            <p data-key="social_sub">Stay Informed</p>
-            <h2 data-key="social_title">Join Our Community</h2>
-        </div>
-        <div class="social-grid fade-in">
-            <a href="https://www.instagram.com/buendia_spain_group?igsh=Z2k1czh5MzU5bWE0" target="_blank" class="social-btn">
-                <span>📸</span> Instagram
-            </a>
-            <a href="https://t.me/immigration2spain" target="_blank" class="social-btn">
-                <span>✈️</span> Telegram
-            </a>
+    <section id="consult" class="page-section">
+        <div class="consult-box fade-in">
+            <h2 style="color:var(--accent-gold); font-size:36px; margin:0;" data-key="form_title">فرم ارزیابی و مشاوره رایگان</h2>
+            <p style="color:var(--text-muted); font-size:16px; margin-top:10px;" data-key="form_desc">در کمتر از یک دقیقه، فرم زیر را پر کنید تا متخصصین ما شرایط شما را تحلیل کرده و بهترین مسیر مهاجرتی را پیشنهاد دهند.</p>
+            
+            <form id="freeConsultForm" onsubmit="handleFormSubmit(event)">
+                <input type="text" name="Name" required placeholder="نام و نام خانوادگی (Full Name)" data-key="form_name">
+                <input type="tel" name="Phone" required placeholder="شماره تماس / واتساپ (Phone/WhatsApp)" dir="ltr">
+                <select name="Service_Interest" required>
+                    <option value="" disabled selected data-key="form_opt_def">موضوع مشاوره را انتخاب کنید</option>
+                    <option value="Golden Visa">گلدن ویزا و خرید ملک</option>
+                    <option value="Non-Lucrative">اقامت تمکن مالی</option>
+                    <option value="Company/Startup">ثبت شرکت و راه‌اندازی بیزنس</option>
+                    <option value="Student Visa">ویزای تحصیلی / دوره‌های زبان</option>
+                </select>
+                <textarea name="Details" rows="3" placeholder="توضیحات کوتاه در مورد شرایط شما (سن، سرمایه تقریبی، هدف)..." data-key="form_msg"></textarea>
+                <button type="submit" class="btn-primary" id="submitBtn" style="width:100%; margin-top:10px;" data-key="form_btn">ثبت درخواست مشاوره</button>
+            </form>
+            
+            <div id="successSection" style="display:none; margin-top:30px;">
+                <h1 style="color:#25D366; font-size:60px; margin:0;">✓</h1>
+                <p style="color:white; font-size:18px;" data-key="form_success">درخواست شما با موفقیت ثبت شد. به زودی با شما تماس می‌گیریم.</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Buendia Groupe. All rights reserved.</p>
+        <p>&copy; 2026 Buendia Groupe | Premium Residency Experts. All rights reserved.</p>
     </footer>
 
     <a href="https://wa.me/34614066200" target="_blank" class="floating-wa">
-        <svg viewBox="0 0 32 32" width="35" height="35" fill="white">
-            <path d="M16.05 2.5a13.45 13.45 0 0 0-11.4 20.6l-2.1 6.3 6.5-2.1A13.45 13.45 0 1 0 16.05 2.5zm0 24.5c-2.1 0-4.1-.6-5.9-1.6l-.4-.2-4.4 1.4 1.4-4.2-.3-.5A11.2 11.2 0 1 1 16.05 27.1zm6.2-8.5c-.3-.2-2-.1-2.3-.1-.3 0-.5.1-.7.4-.2.3-.9 1.1-1.1 1.3-.2.3-.5.3-.8.2-.3-.1-1.4-.5-2.7-1.7-1-1-1.7-2.1-1.9-2.4-.2-.3 0-.5.1-.6.2-.2.4-.4.5-.6.2-.2.2-.4.3-.6.1-.3 0-.5-.1-.7s-1.1-2.6-1.5-3.6c-.4-1-.7-.8-1-.8h-.8c-.3 0-.8.1-1.2.6-.4.5-1.6 1.6-1.6 3.8 0 2.2 1.6 4.4 1.9 4.7.2.3 3.2 4.9 7.7 6.8 1.1.5 1.9.7 2.6.9 1.1.3 2 .3 2.8.2.8-.1 2.6-1.1 2.9-2.1.3-1 .3-1.9.2-2.1-.2-.2-.5-.3-.9-.4z"></path>
-        </svg>
+        <svg viewBox="0 0 32 32" width="35" height="35" fill="white"><path d="M16.05 2.5a13.45 13.45 0 0 0-11.4 20.6l-2.1 6.3 6.5-2.1A13.45 13.45 0 1 0 16.05 2.5zm0 24.5c-2.1 0-4.1-.6-5.9-1.6l-.4-.2-4.4 1.4 1.4-4.2-.3-.5A11.2 11.2 0 1 1 16.05 27.1zm6.2-8.5c-.3-.2-2-.1-2.3-.1-.3 0-.5.1-.7.4-.2.3-.9 1.1-1.1 1.3-.2.3-.5.3-.8.2-.3-.1-1.4-.5-2.7-1.7-1-1-1.7-2.1-1.9-2.4-.2-.3 0-.5.1-.6.2-.2.4-.4.5-.6.2-.2.2-.4.3-.6.1-.3 0-.5-.1-.7s-1.1-2.6-1.5-3.6c-.4-1-.7-.8-1-.8h-.8c-.3 0-.8.1-1.2.6-.4.5-1.6 1.6-1.6 3.8 0 2.2 1.6 4.4 1.9 4.7.2.3 3.2 4.9 7.7 6.8 1.1.5 1.9.7 2.6.9 1.1.3 2 .3 2.8.2.8-.1 2.6-1.1 2.9-2.1.3-1 .3-1.9.2-2.1-.2-.2-.5-.3-.9-.4z"></path></svg>
     </a>
-
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()" style="cursor:pointer">&times;</span>
-            <div id="formSection">
-                <h2 style="color:white; margin-top:0">Consultation</h2>
-                <p style="color:var(--accent-gold); font-size:14px">Service: <span id="dynamicServiceName"></span></p>
-                <form id="buendiaForm" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group"><label>Phone</label><input type="tel" name="Phone" required placeholder="+34 XXX XXX XXX" dir="ltr" style="width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px; border-radius: 10px; border: none;"></div>
-                    <div class="form-group"><label>Details</label><textarea name="Details" rows="4" required placeholder="Your request..." style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 10px; border: none;"></textarea></div>
-                    <button type="submit" class="btn-glow" id="submitBtn">Send Request</button>
-                </form>
-            </div>
-            <div id="successSection" class="hidden" style="text-align:center">
-                <h1 style="color:var(--accent-gold); font-size:60px">✓</h1>
-                <p>One of our specialists will contact you shortly.</p>
-            </div>
-        </div>
-    </div>
 
     <script>
         const translations = {
             en: {
-                agency_name: "Buendia Groupe", nav_home: "Home", nav_edu: "Education", nav_life: "Spain",
-                hero_title: "Your Future in Spain Starts Here.", hero_desc: "Bespoke residency, immigration, and career consulting for the global professional.",
-                edu_sub: "Academic Excellence", edu_title: "Study in Spain", cost_title: "🎓 Tuition Fees", deg_title: "📜 Degree Levels", edu_ben_title: "✨ Student Perks", edu_ben_desc: "• Part-time work permit (30h/week).\n• Lower cost compared to US/UK.\n• Path to work permit post-graduation.\n• Top-tier EU accreditation.",
-                climate_sub: "Environment", climate_title: "Spain's Climate", cli_med_title: "🌊 Mediterranean", cli_med_desc: "Mild winters and hot, humid summers. Perfect for coastal lovers. (Barcelona, Valencia)", cli_south_title: "🌵 The South", cli_south_desc: "The warmest region. Summers can exceed 40°C. Mild and sunny winters. (Malaga, Seville)", cli_north_title: "🧊 The North", cli_north_desc: "Green, lush, and rainy. Similar to northern Iran. (Bilbao, Asturias)", cli_central_title: "🏜️ Central Spain", cli_central_desc: "Hot, dry summers and cold winters. Significant day/night shifts. (Madrid)", cli_islands_title: "🏖️ The Islands", cli_islands_desc: "Subtropical perfection. Average 20°C - 26°C year-round. (Canary Islands)",
-                life_sub: "Discovery", life_title: "Life in Spain", life_style_title: "Lifestyle", life_style_desc: "Social, welcoming, and relaxed. A strong focus on family values with vibrant days and lively nights.", life_cost_title: "Cost of Living", life_cost_desc: "Highly accessible compared to Northern Europe. Average costs around €1000-€1500.", life_sec_title: "Security", life_sec_desc: "Ranked among the safest countries in Europe with incredibly low severe crime rates.", life_med_title: "Healthcare", life_med_desc: "World-class infrastructure offering extensive public and private care.",
-                social_sub: "Stay Informed", social_title: "Join Our Community",
-                services_title: "Immigration Solutions", srv_student_title: "Student Visas", srv_student_desc: "Complete support.", srv_nomad_title: "Digital Nomad", srv_nomad_desc: "3-year remote work residency.", srv_wealth_title: "Non-Lucrative", srv_wealth_desc: "Passive income based relocation."
+                agency_name: "Buendia Groupe", nav_home: "Home", nav_services: "Services", nav_visas: "Visas", nav_edu: "Education", nav_life: "Spain", nav_consult: "Consult",
+                hero_title: "Secure Your Residency in Spain.", hero_desc: "From Golden Visas to Corporate Setup and Real Estate. Start your secure, professional European journey with our local legal and tax network.",
+                btn_consult: "Free Consultation", btn_learn: "Learn More",
+                srv_sub: "Premium Categories", srv_title: "Core Services",
+                cat_1_title: "Residency & Visas", cat_1_desc: "Custom pathway design (Non-Lucrative, Golden Visa, Digital Nomad) based on your real profile.",
+                cat_2_title: "Real Estate Investment", cat_2_desc: "Selecting cities and properties combining high quality of life with strong ROI.",
+                cat_3_title: "Corporate Setup", cat_3_desc: "Company structure, banking, and tax planning for international entrepreneurs.",
+                cat_4_title: "Academic Future", cat_4_desc: "University admissions and language courses creating a long-term pathway to the labor market.",
+                cat_5_title: "Finance & Banking", cat_5_desc: "International bank account opening, precise tax understanding, and capital flow planning.",
+                cat_6_title: "Relocation Services", cat_6_desc: "From neighborhood selection and schools to insurance and housing after arrival.",
+                det_sub: "Pathways & Explanations", det_title: "Main Immigration Pathways",
+                det_golden_title: "🇪🇸 Golden Visa", det_golden_desc: "The Golden Visa is your fast track to Europe. Non-EU citizens investing at least €500,000 in Spanish real estate secure permanent residency for their entire family.",
+                det_golden_1: "No physical residency requirement (maintain your business in your home country).",
+                det_golden_2: "Full working rights in Spain for all family members.",
+                det_golden_3: "Investment can be split across multiple commercial or residential properties.",
+                det_nonluc_title: "💶 Non-Lucrative Visa", det_nonluc_desc: "Designed for applicants with stable, passive income (savings, rentals, pensions) who do not need to work in Spain. It is a highly secure route for families.",
+                det_nonluc_1: "No massive capital investment or currency transfer required.",
+                det_nonluc_2: "Allows children to enroll in top-tier public and international schools.",
+                det_nonluc_3: "Can be modified to a working or business visa after the first year.",
+                det_student_title: "🎓 Student Pathway", det_student_desc: "A smart, cost-effective entry to Europe. Enrolling in recognized universities or language academies grants a long-term visa with a clear path to working residency.",
+                det_student_1: "Part-time working rights (up to 30 hours/week).",
+                det_student_2: "Public university fees are incredibly affordable (€700 - €3500 per year).",
+                life_sub: "Discover the Country", life_title: "Why Choose Spain?",
+                life_med_title: "Quality & Cost of Living", life_med_desc: "Living costs are significantly lower than Northern Europe, paired with a world-class healthcare system and extremely high urban security.",
+                life_cli_title: "Unmatched Climate", life_cli_desc: "From the sunny Mediterranean coast to the lush green north and the dry center of Madrid, Spain has the perfect climate for everyone.",
+                form_title: "Free Consultation Request", form_desc: "Fill out the form below in under a minute. Our experts will analyze your profile and suggest the best pathway.",
+                form_name: "Full Name", form_opt_def: "Select your primary interest", form_msg: "Briefly describe your situation (age, capital, goals)...", form_btn: "Submit Request", form_success: "Request submitted successfully. We will contact you soon."
             },
             fa: {
-                agency_name: "گروه بوئندیا", nav_home: "خانه", nav_edu: "تحصیل", nav_life: "اسپانیا",
-                hero_title: "آینده شما در اسپانیا از اینجا شروع می شود", hero_desc: "مشاوره تخصصی اقامت، مهاجرت و شغلی برای حرفه‌ای‌های جهانی.",
-                edu_sub: "تعالی آکادمیک", edu_title: "تحصیل در اسپانیا", cost_title: "🎓 هزینه تحصیل", deg_title: "📜 مقاطع تحصیلی", edu_ben_title: "✨ مزایای دانشجویی", edu_ben_desc: "• اجازه کار پاره‌وقت (۳۰ ساعت).\n• هزینه کمتر نسبت به آمریکا و انگلیس.\n• امکان تبدیل ویزا به کار بعد از تحصیل.\n• اعتبار بالای مدارک در کل اتحادیه اروپا.",
-                climate_sub: "اقلیم", climate_title: "آب‌وهوای اسپانیا", cli_med_title: "🌊 سواحل مدیترانه", cli_med_desc: "زمستان‌های ملایم و تابستان‌های گرم. مناسب برای دوست‌داران هوای معتدل ساحلی. (بارسلونا، والنسیا)", cli_south_title: "🌵 جنوب اسپانیا", cli_south_desc: "گرم‌ترین بخش کشور. تابستان‌های بالای ۴۰ درجه و زمستان‌های آفتابی. (مالاگا، سویا)", cli_north_title: "🧊 شمال اسپانیا", cli_north_desc: "سبز و بارانی. شبیه به شمال ایران. تابستان‌های خنک و زمستان‌های مرطوب. (بیلبائو، آستوریاس)", cli_central_title: "🏜️ مرکز کشور", cli_central_desc: "تابستان‌های گرم و خشک و زمستان‌های سرد. اختلاف دمای زیاد شب و روز. (مادرید)", cli_islands_title: "🏖️ جزایر اسپانیا", cli_islands_desc: "بهشت معتدل. دمای ۲۰ تا ۲۶ درجه در تمام سال. (جزایر قناری)",
-                life_sub: "کشف", life_title: "زندگی در اسپانیا", life_style_title: "سبک زندگی", life_style_desc: "اجتماعی و پذیرا. تمرکز بالا بر ارزش‌های خانواده.", life_cost_title: "هزینه زندگی", life_cost_desc: "مقرون‌به‌صرفه. هزینه متوسط حدود ۱۰۰۰ تا ۱۵۰۰ یورو.", life_sec_title: "امنیت", life_sec_desc: "یکی از امن‌ترین کشورهای اروپا با نرخ جرم بسیار پایین.", life_med_title: "بهداشت", life_med_desc: "زیرساخت‌های پزشکی در سطح جهانی.",
-                social_sub: "اطلاع‌رسانی", social_title: "به جامعه ما بپیوندید",
-                services_title: "راه‌کارهای مهاجرتی", srv_student_title: "ویزای تحصیلی", srv_student_desc: "پذیرش و اقامت کامل.", srv_nomad_title: "دیجیتال نومد", srv_nomad_desc: "اقامت ۳ ساله کار از راه دور.", srv_wealth_title: "تمکن مالی", srv_wealth_desc: "مهاجرت با درآمد غیرفعال."
+                agency_name: "گروه بوئندیا", nav_home: "خانه", nav_services: "خدمات", nav_visas: "مهاجرت", nav_edu: "تحصیل", nav_life: "اسپانیا", nav_consult: "مشاوره",
+                hero_title: "اقامت اسپانیا با اطمینان و سرعت", hero_desc: "از اخذ اقامت و گلدن ویزا تا ثبت شرکت و خرید ملک. با همراهی شبکه حقوقی و مالیاتی محلی، مسیر زندگی اروپایی خود را امن آغاز کنید.",
+                btn_consult: "مشاوره رایگان", btn_learn: "اطلاعات بیشتر",
+                srv_sub: "Premium Categories", srv_title: "خدمات اصلی",
+                cat_1_title: "اقامت و ویزا", cat_1_desc: "تحلیل و طراحی مسیر اقامت (تمکن مالی، گلدن ویزا، نومد) بر اساس پروفایل واقعی شما.",
+                cat_2_title: "سرمایه‌گذاری ملک", cat_2_desc: "انتخاب ملک با نگاه ترکیبیِ «زندگی مرفه + بازده سرمایه بالا».",
+                cat_3_title: "ثبت شرکت", cat_3_desc: "طراحی ساختار شرکت، حساب بانکی و مالیات برای کارآفرینان.",
+                cat_4_title: "تحصیل و آینده", cat_4_desc: "انتخاب دانشگاه و ساختن مسیر بلندمدت ورود هوشمندانه به بازار کار.",
+                cat_5_title: "امور مالی و بانکی", cat_5_desc: "افتتاح حساب، فهم مالیات و برنامه‌ریزی انتقال سرمایه بین ایران و اسپانیا.",
+                cat_6_title: "اسکان (Relocation)", cat_6_desc: "از پیدا کردن محله و مدرسه فرزندان تا بیمه و اجاره خانه.",
+                det_sub: "Pathways & Explanations", det_title: "مسیرهای اصلی مهاجرت",
+                det_golden_title: "🇪🇸 گلدن ویزا (ویزای طلایی)", det_golden_desc: "ویزای طلایی اسپانیا دریچه ورود سریع شما به اروپا است. شهروندان خارج از اتحادیه اروپا می‌توانند با سرمایه‌گذاری حداقل ۵۰۰ هزار یورو در بخش املاک، اقامت دائم دریافت کنند.",
+                det_golden_1: "عدم نیاز به حضور فیزیکی دائم در اسپانیا (حفظ تجارت در ایران).", det_golden_2: "اجازه کار کامل در اسپانیا برای تمام اعضای خانواده.", det_golden_3: "سرمایه‌گذاری در چندین ملک تجاری یا مسکونی مجاز است.",
+                det_nonluc_title: "💶 اقامت تمکن مالی", det_nonluc_desc: "مخصوص متقاضیانی که درآمد ثابت و غیرفعال (سود سپرده، اجاره، حقوق بازنشستگی) در ایران دارند و نیازی به کار کردن در اسپانیا ندارند.",
+                det_nonluc_1: "بدون نیاز به سرمایه‌گذاری سنگین و انتقال ارز زیاد.", det_nonluc_2: "امکان ثبت‌نام فرزندان در بهترین مدارس بین‌المللی.", det_nonluc_3: "پس از سال اول، امکان تبدیل به اقامت کاری یا ثبت شرکت.",
+                det_student_title: "🎓 ویزای تحصیلی", det_student_desc: "مسیر هوشمندانه و کم‌هزینه. پذیرش در دانشگاه‌ها یا کالج‌های زبان مورد تایید برای اخذ ویزای بلندمدت.",
+                det_student_1: "اجازه کار پاره‌وقت (تا ۳۰ ساعت در هفته) برای پوشش هزینه‌ها.", det_student_2: "هزینه تحصیل بسیار مقرون‌به‌صرفه (۷۰۰ تا ۳۵۰۰ یورو در سال).",
+                life_sub: "Discover the Country", life_title: "چرا زندگی در اسپانیا؟",
+                life_med_title: "کیفیت و هزینه زندگی", life_med_desc: "هزینه زندگی بسیار ارزان‌تر از شمال اروپا به همراه سیستم درمانی قدرتمند و امنیت شهری بسیار بالا.",
+                life_cli_title: "تنوع آب‌وهوایی", life_cli_desc: "از سواحل مدیترانه‌ای گرم تا مناطق سرسبز و بارانی شمال و آب‌وهوای خشک مادرید.",
+                form_title: "فرم ارزیابی و مشاوره رایگان", form_desc: "در کمتر از یک دقیقه، فرم زیر را پر کنید تا بهترین مسیر مهاجرتی را پیشنهاد دهیم.",
+                form_name: "نام و نام خانوادگی", form_opt_def: "موضوع مشاوره را انتخاب کنید", form_msg: "توضیحات کوتاه در مورد شرایط شما (سن، سرمایه تقریبی، هدف)...", form_btn: "ثبت درخواست مشاوره", form_success: "درخواست شما با موفقیت ثبت شد. به زودی با شما تماس می‌گیریم."
             }
         };
 
         function changeLanguage() {
             const lang = document.getElementById('lang-selector').value;
-            // Set layout direction based on language
             document.body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
-            
-            // Translate all elements with a data-key
             document.querySelectorAll('[data-key]').forEach(el => {
                 const key = el.getAttribute('data-key');
-                if (translations[lang][key]) el.innerText = translations[lang][key];
+                if (translations[lang][key]) {
+                    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = translations[lang][key];
+                    else if(el.tagName === 'OPTION') el.innerText = translations[lang][key];
+                    else el.innerHTML = translations[lang][key];
+                }
             });
         }
 
-        const modal = document.getElementById('contactModal');
-        function openModal(service) { 
-            document.getElementById('dynamicServiceName').innerText = service;
-            modal.style.display = "flex"; 
-        }
-        function closeModal() { modal.style.display = "none"; }
-        window.onclick = function(e) { if (e.target === modal) closeModal(); }
-        
         async function handleFormSubmit(e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
-            btn.innerText = "Sending...";
+            btn.innerText = "...";
+            // Replace with your Formspree link:
             await fetch("https://formspree.io/f/xyklpkba", { method: "POST", body: new FormData(e.target), headers: { 'Accept': 'application/json' } });
-            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('freeConsultForm').style.display = 'none';
             document.getElementById('successSection').style.display = 'block';
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            changeLanguage(); // Forces the default language to apply immediately on load
+            changeLanguage();
             const obs = new IntersectionObserver(ents => ents.forEach(e => { if(e.isIntersecting) e.target.classList.add('appear'); }), { threshold: 0.1 });
             document.querySelectorAll('.fade-in').forEach(f => obs.observe(f));
         });
